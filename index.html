@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="main">
+        <div id="header">
+            <div class="menu">
+                <a href="#">introspect</a>
+                <nav class="nav" id="myTopnav">
+                    <a href="#">Home</a>
+                    <a href="#">Generic</a>
+                    <a href="#">Element</a>
+                </nav>
+                <a href="#" id="hide" onclick="myFunction()">&equiv;</a>
+            </div>
+        </div>
+    </div>
+</body>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    
+    #header {
+        width: 100%;
+        background-color: black;
+    }
+    
+    .menu {
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        height: 100px;
+    }
+    
+    .menu>a {
+        text-decoration: none;
+        color: #e5474b;
+        font-size: 2em;
+    }
+    
+    .nav {
+        width: 100%;
+        text-align: right;
+    }
+    
+    .nav>a {
+        text-decoration: none;
+        padding: 10px 20px;
+        color: #a93636;
+        font-weight: bold;
+    }
+    
+    .nav>a:nth-child(1) {
+        background-color: #2e6594;
+    }
+    
+    #hide {
+        display: none;
+    }
+    
+    @media (max-width: 600px) {
+        #hide {
+            display: block;
+        }
+        .nav>a {
+            display: none;
+        }
+        .responsive {
+            position: relative;
+            top: 107%;
+            left: 0;
+            right: 0;
+        }
+        .responsive>a {
+            display: block;
+            width: 100%;
+            text-align: center;
+        }
+    }
+    
+    html,
+    body {
+        margin: 0;
+        height: 100%;
+    }
+</style>
+<script>
+    function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "nav") {
+            x.className += " responsive";
+        } else {
+            x.className = 'nav';
+        }
+    }
+</script>
+
+</html>
